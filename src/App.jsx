@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import TicketCard from "./components/TicketCard";
 import TaskStatus from "./components/TaskStatus";
+import Footer from "./components/Footer";
 import ticketsData from "./data/tickets.json";
 
 function App() {
@@ -67,9 +68,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       <Navbar />
-      <main className="max-w-full mx-auto px-4 lg:px-12 py-12">
+      <main className="max-w-full mx-auto px-4 lg:px-12 py-12 grow">
         <Banner
           inProgressCount={activeTickets.length}
           resolvedCount={resolvedTickets.length}
@@ -109,6 +110,7 @@ function App() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
